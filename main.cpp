@@ -130,7 +130,11 @@ int main() {
             game.viewModeButtons(app, font);
             app.display();
         }
-        if(game.getCurrentTier() != "MainMenu" and game.getCurrentTier() != "ModeSelect"){
+        if(game.getCurrentTier() == "CarSend"){
+            game.money += 10000;
+            game.setCurrentTier("All");
+        }
+        if(game.getCurrentTier() != "MainMenu" and game.getCurrentTier() != "ModeSelect" and game.getCurrentTier() != "CarSend"){
             app.clear(sf::Color::Black);
             app.draw(Background);
             sf::Vector2i mousePos = sf::Mouse::getPosition(app);

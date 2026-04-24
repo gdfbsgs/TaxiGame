@@ -18,6 +18,9 @@ void TaxiGame::handleMouseClicked(sf::Vector2i mousePos, sf::RenderWindow& app) 
             if (label == "ModeSelect") {
                 setCurrentTier("ModeSelect");
             }
+            if (label == "CarSend") {
+                setCurrentTier("CarSend");
+            }
         }
     }
 

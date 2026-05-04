@@ -14,21 +14,25 @@ Button* carSendCancelbutton = nullptr;
 void openCarSendUI(std::string currentMode, sf::Font& font) {
     // Setup UI elements
     carSendTitle.setFont(font);
-    carSendTitle.setString("Send Ride - Select Tier");
-    carSendTitle.setCharacterSize(28);
-    carSendTitle.setFillColor(sf::Color::White);
-    carSendTitle.setPosition(200, 50);
-    
     distanceDisplayText.setFont(font);
     selectedTierDisplay.setFont(font);
     earningsDisplay.setFont(font);
+    carSendTitle.setCharacterSize(28);
     selectedTierDisplay.setCharacterSize(20);
     earningsDisplay.setCharacterSize(20);
+    distanceDisplayText.setCharacterSize(24);
+    carSendTitle.setString("Send Car");
+    
+    carSendTitle.setFillColor(sf::Color::White);
+    carSendTitle.setPosition(200, 50);
+    
+    
+    
     selectedTierDisplay.setFillColor(sf::Color::Cyan);
     earningsDisplay.setFillColor(sf::Color::Green);
     selectedTierDisplay.setPosition(100, 210);
     earningsDisplay.setPosition(100, 260);
-    distanceDisplayText.setCharacterSize(24);
+    
     distanceDisplayText.setFillColor(sf::Color::Yellow);
     distanceDisplayText.setPosition(150, 120);
     
@@ -40,15 +44,20 @@ void openCarSendUI(std::string currentMode, sf::Font& font) {
     earningsDisplay.setString("Estimated Earnings: $0");
     
     // Create buttons
-    if (carSendConfirmbutton != nullptr) delete carSendConfirmbutton;
-    if (carSendCancelbutton != nullptr) delete carSendCancelbutton;
+    if (carSendConfirmbutton != nullptr){
+        delete carSendConfirmbutton;
+    }
+    if (carSendCancelbutton != nullptr){
+        delete carSendCancelbutton;
+    }
     carSendConfirmbutton = new Button(200, 800, 150, 50, "CONFIRM", font);
     carSendCancelbutton = new Button(650, 800, 150, 50, "CANCEL", font);
 }
 
 float getCarSendEarnings(const std::string& tier, int distance) {
-    if (tier.empty() || distance == 0) return 0;
-    
+    if (tier.empty() || distance == 0){
+        return 0;
+    }
     float baseRate = 10.0f;
     float tierMultiplier = 1.0f;
     

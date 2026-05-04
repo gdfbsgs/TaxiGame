@@ -59,7 +59,7 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
         std::string model = cars[carCurrent].getModel();
         if (model != lastModel || carTexture.getSize() == sf::Vector2u(0,0)) {
             if(!carTexture.loadFromFile("source/Car Images/" + model + ".png")){
-                std::cout << "Load Failed: source/Car Images/" << model << ".png\n";
+                carTexture.loadFromFile("source/Car Images/DEFAULT.png");
             }
             lastModel = model;
         }
@@ -77,7 +77,7 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
         sf::Text CarQuant;
         CarQuant.setFont(font);
         long long qw = cars[carCurrent].getQuantity(); 
-        CarQuant.setString(std::to_string(qw));
+        CarQuant.setString("Quantity:" + std::to_string(qw));
         CarQuant.setCharacterSize(28);
         CarQuant.setFillColor(sf::Color::Blue);
         CarQuant.setPosition(50.f, 670.f);

@@ -7,4 +7,5 @@ cars.push_back(Car("BYD Han", 3, 10.0, "Business", 45800, false, 1));
 cars.push_back(Car("GAC M8", 3, 10.0, "Business", 43800, false, 1));
 cars.push_back(Car("Hongqi H5", 3, 10.0, "Business", 39200, false, 1));
 cars.push_back(Car("Hongqi H7", 3, 10.0, "Business", 42800, true, 1));
-cars.push_back(Car("Mercedes-Benz E-klasse / Mercedes-Benz E-klasse AMG", 3, 10.0, "Business", 72800, false, 1));
+cars.push_back(Car("Mercedes-Benz E-klasse", 3, 10.0, "Business", 72800, false, 1));
+cars.push_back(Car("Mercedes-Benz E-klasse AMG", 3, 10.0, "Business", 72800, false, 1));

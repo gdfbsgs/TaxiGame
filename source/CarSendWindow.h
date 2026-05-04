@@ -38,6 +38,7 @@ void openCarSendUI(std::string currentMode, sf::Font& font) {
     
     // Reset values
     carSendSelectedTier = "";
+    carSendDistance = 0;
     
     distanceDisplayText.setString("Distance: " + std::to_string(carSendDistance) + " km");
     selectedTierDisplay.setString("Selected Tier: None");
@@ -104,6 +105,25 @@ void handleCarSendClick(sf::Vector2i mousePos, TaxiGame& game) {
     if (carSendCancelbutton != nullptr && carSendCancelbutton->isClicked(mousePos.x, mousePos.y)) {
         game.setCurrentTier("All");
         return;
+    }
+}
+
+void handleCarSendKeyPress(sf::Event& event, TaxiGame& game) {
+    if (event.type == sf::Event::KeyPressed) {
+        // Arrow up to increase distance
+        if (event.key.code == sf::Keyboard::Up) {
+            carSendDistance += 1;
+            int earnings = (int)getCarSendEarnings(carSendSelectedTier, carSendDistance);
+            distanceDisplayText.setString("Distance: " + std::to_string(carSendDistance) + " km");
+            earningsDisplay.setString("Estimated Earnings: $" + std::to_string(earnings));
+        }
+        // Arrow down to decrease distance
+        else if (event.key.code == sf::Keyboard::Down) {
+            if (carSendDistance > 0) carSendDistance -= 1;
+            int earnings = (int)getCarSendEarnings(carSendSelectedTier, carSendDistance);
+            distanceDisplayText.setString("Distance: " + std::to_string(carSendDistance) + " km");
+            earningsDisplay.setString("Estimated Earnings: $" + std::to_string(earnings));
+        }
     }
 }
 

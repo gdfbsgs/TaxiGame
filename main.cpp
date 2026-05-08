@@ -60,13 +60,14 @@ void TaxiGame::initializeCars() {
 
 
 #include "source/TierButtonsInit.h"
+#include "source/ColorButtonsInit.h"
 #include "source/ModeButtonsInit.h"
 #include "source/MainMenuButtonsInit.h"
 
 #include "source/functions/MainMenuButtonsView.h"
 #include "source/functions/TierButtonsView.h"
 #include "source/functions/ModeButtonsView.h"
-
+#include "source/functions/ColorButtonsView.h"
 #include "source/functions/mouseMove.h"
 #include "source/functions/mouseClick.h"
 #include "source/CarSendWindow.h"
@@ -128,6 +129,7 @@ int main() {
                 openCarSendUI(game.getCurrentMode(), font);
             }
             viewCarSendUI(app, game);
+            game.viewMainMenuButtons(app, font);
             app.display();
         }
         else if (game.getCurrentTier() == "MainMenu") {
@@ -148,9 +150,10 @@ int main() {
             app.clear(sf::Color::Black);
             app.draw(Background);
             sf::Vector2i mousePos = sf::Mouse::getPosition(app);
-            game.viewAllCars(app, font, mousePos);
+            game.viewAllCars(app, font, mousePos, game);
             game.viewMainMenuButtons(app, font);
             game.viewTierButtons(app, font);
+           
             app.display();
         } 
         

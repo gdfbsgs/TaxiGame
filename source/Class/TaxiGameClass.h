@@ -22,8 +22,7 @@ class TaxiGame {
         // Главные кнопки меню (Exit, MainMenu...)
         vector<Button> mainButtons;
         vector<Button> modeButtons;
-
-
+        vector<Button> colorbuttons;
         // Приватный метод загрузки списка машин
         void initializeCars();
 
@@ -45,7 +44,7 @@ class TaxiGame {
 
 
         // Рендер списка машин с кнопками покупки (основной вид)
-        void viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i mousePos);
+         void viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i mousePos, TaxiGame& game);
 
         void viewAllTiers();
 
@@ -55,10 +54,11 @@ class TaxiGame {
         void initializeMainButtons(sf::Font& font);
         void initializeTierButtons(sf::Font& font);
         void initializeModeButtons(sf::Font& font);
-
+        void initializeColorButtons(sf::Font& font);
         void viewMainMenuButtons(sf::RenderWindow& app, sf::Font& font);
         void viewTierButtons(sf::RenderWindow& app, sf::Font& font);
         void viewModeButtons(sf::RenderWindow& app, sf::Font& font);
+        void viewColorButtons(sf::RenderWindow& app, sf::Font& font);
         int getCarsCount();
         
         void setCurrentTier(string t);

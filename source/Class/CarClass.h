@@ -7,6 +7,7 @@ private:
     // Уровень (Economy, Comfort...)
     std::string tier;
     std::string manufacturer;
+    std::string color;
     // Вместимость пассажиров
     long long capacity;
     // Базовый тариф за км
@@ -21,8 +22,8 @@ private:
 
 public:
     // Конструктор: модель, вместимость, тариф, класс, цена, владение, количество (по умолчанию 1)
-    Car(std::string m,std::string manu, long long c, double bf, std::string t, double bp = 0.0, bool o = false, long long qty = 1)
-        : model(m), manufacturer(manu), capacity(c), baseFare(bf), tier(t), buyPrice(bp), owned(o), quantity(qty) {}
+    Car(std::string m,std::string manu, std::string col, long long c, double bf, std::string t, double bp = 0.0, bool o = false, long long qty = 1)
+        : model(m), manufacturer(manu), color(col), capacity(c), baseFare(bf), tier(t), buyPrice(bp), owned(o), quantity(qty) {}
 
 
     std::string getModel() const {
@@ -33,6 +34,9 @@ public:
     }
     std::string getManufacturer() const { 
         return manufacturer; 
+    }
+    std::string getColor() const {
+        return color;
     }
     long long getCapacity() const { 
         return capacity; 

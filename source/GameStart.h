@@ -22,9 +22,10 @@ int ScreenWidth = 1000, ScreenHeight = 1000;
     TaxiGame game;
     game.setCurrentTier("Economy"); 
     game.setCurrentMode("YandexGo");
-    game.initializeMainButtons(font); 
+    game.initializeMainButtons(font);
     game.initializeTierButtons(font);
     game.initializeModeButtons(font);
+    game.initializeColorButtons(font);
     game.gameFont = &font;
     
     sound2.play();

@@ -1,4 +1,4 @@
-void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i mousePos) {
+void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i mousePos, TaxiGame& game) {
     // Локальные переменные для текста: уровень, деньги, машины
     sf::Text tierText;
     sf::Text moneyText;
@@ -173,6 +173,10 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
     Modetext.setFillColor(sf::Color::Blue);
     Modetext.setPosition(640.f, 70.f);
     app.draw(Modetext);
+    
+    for (auto& button : colorbuttons) {
+        button.draw(app);
+    }
               
 }
 

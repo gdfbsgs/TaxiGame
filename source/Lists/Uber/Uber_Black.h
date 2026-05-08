@@ -5,17 +5,17 @@
     cars.push_back(Car("Mercedes-Benz C43 AMG", 4, 1.7, "Black", 60000, false, 1));
     cars.push_back(Car("Mercedes-Benz C63 AMG", 4, 1.8, "Black", 80000, false, 1));
     cars.push_back(Car("Mercedes-Benz E-Class", 4, 1.8, "Black", 65000, false, 1));
-    cars.push_back(Car("Mercedes-Benz E350", 4, 1.8, "Black", 62000, false, 1));
-    cars.push_back(Car("Mercedes-Benz E450", 4, 1.8, "Black", 68000, false, 1));
-    cars.push_back(Car("Mercedes-Benz E53 AMG", 4, 1.9, "Black", 78000, false, 1));
-    cars.push_back(Car("Mercedes-Benz E63 AMG", 4, 2.0, "Black", 110000, false, 1));
+    // cars.push_back(Car("Mercedes-Benz E350", 4, 1.8, "Black", 62000, false, 1));
+    // cars.push_back(Car("Mercedes-Benz E450", 4, 1.8, "Black", 68000, false, 1));
+    // cars.push_back(Car("Mercedes-Benz E53 AMG", 4, 1.9, "Black", 78000, false, 1));
+    // cars.push_back(Car("Mercedes-Benz E63 AMG", 4, 2.0, "Black", 110000, false, 1));
     cars.push_back(Car("Mercedes-Benz S-Class", 4, 2.0, "Black", 115000, false, 1));
-    cars.push_back(Car("Mercedes-Benz S500", 4, 2.0, "Black", 120000, false, 1));
-    cars.push_back(Car("Mercedes-Benz S580", 4, 2.1, "Black", 140000, false, 1));
-    cars.push_back(Car("Mercedes-Benz S63 AMG", 4, 2.3, "Black", 180000, false, 1));
+    // cars.push_back(Car("Mercedes-Benz S500", 4, 2.0, "Black", 120000, false, 1));
+    // cars.push_back(Car("Mercedes-Benz S580", 4, 2.1, "Black", 140000, false, 1));
+    // cars.push_back(Car("Mercedes-Benz S63 AMG", 4, 2.3, "Black", 180000, false, 1));
     cars.push_back(Car("Mercedes-Benz S680 Maybach", 4, 2.5, "Black", 230000, false, 1));
-    cars.push_back(Car("Mercedes-Benz Maybach S580", 4, 2.5, "Black", 200000, false, 1));
-    cars.push_back(Car("Mercedes-Benz Maybach S680", 4, 2.7, "Black", 250000, false, 1));
+    // cars.push_back(Car("Mercedes-Benz Maybach S580", 4, 2.5, "Black", 200000, false, 1));
+    // cars.push_back(Car("Mercedes-Benz Maybach S680", 4, 2.7, "Black", 250000, false, 1));
     cars.push_back(Car("Mercedes-Benz CLA", 4, 1.5, "Black", 42000, false, 1));
     cars.push_back(Car("Mercedes-Benz CLS", 4, 1.8, "Black", 75000, false, 1));
     cars.push_back(Car("Mercedes-Benz AMG GT", 4, 2.0, "Black", 120000, false, 1));
@@ -32,8 +32,8 @@
     cars.push_back(Car("Mercedes-Benz GLS 63 AMG", 6, 2.2, "Black", 135000, false, 1));
     cars.push_back(Car("Mercedes-Benz GLS Maybach", 4, 2.5, "Black", 175000, false, 1));
     cars.push_back(Car("Mercedes-Benz G-Class", 5, 2.2, "Black", 140000, false, 1));
-    cars.push_back(Car("Mercedes-Benz G550", 5, 2.2, "Black", 145000, false, 1));
-    cars.push_back(Car("Mercedes-Benz G63 AMG", 5, 2.4, "Black", 180000, false, 1));
+    // cars.push_back(Car("Mercedes-Benz G550", 5, 2.2, "Black", 145000, false, 1));
+    // cars.push_back(Car("Mercedes-Benz G63 AMG", 5, 2.4, "Black", 180000, false, 1));
 
     // --- BMW ---
     cars.push_back(Car("BMW 2 Series", 4, 1.5, "Black", 40000, false, 1));

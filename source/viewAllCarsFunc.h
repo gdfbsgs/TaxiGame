@@ -4,7 +4,7 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
     sf::Text moneyText;
     sf::Text carModelText;
     sf::Text carInfoText;
-    
+    sf::Text carManufacturerText;
     // Текущий отображаемый автомобиль (статический, чтобы сохранять между кадрами)
     static long long carCurrent = 0;
     static std::string prevTier = "";
@@ -57,8 +57,9 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
     if (carCurrent >= 0 && carCurrent < cars.size() && (currentTier == "All" or currentTier == "UberX" || cars[carCurrent].getTier() == currentTier)) {
         // Cache texture
         std::string model = cars[carCurrent].getModel();
+        std::string manufacturer = cars[carCurrent].getManufacturer();
         if (model != lastModel || carTexture.getSize() == sf::Vector2u(0,0)) {
-            if(!carTexture.loadFromFile("source/Car Images/" + model + ".png")){
+            if(!carTexture.loadFromFile("source/Car Images/" + manufacturer + "/" + model + ".png")){
                 carTexture.loadFromFile("source/Car Images/DEFAULT.png");
             }
             lastModel = model;
@@ -74,6 +75,13 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
         carModelText.setFillColor(sf::Color::Blue);
         carModelText.setPosition(50.f, 580.f);
         app.draw(carModelText);
+
+        carManufacturerText.setFont(font);
+        carManufacturerText.setString("Manufacturer: " + cars[carCurrent].getManufacturer());
+        carManufacturerText.setCharacterSize(28);
+        carManufacturerText.setFillColor(sf::Color::Blue);
+        carManufacturerText.setPosition(50.f, 710.f);
+        app.draw(carManufacturerText);
         sf::Text CarQuant;
         CarQuant.setFont(font);
         long long qw = cars[carCurrent].getQuantity(); 
@@ -138,9 +146,9 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
         sf::Text noCarsText;
         noCarsText.setFont(font);
         noCarsText.setString("No cars for tier: " + currentTier);
-        noCarsText.setCharacterSize(24);
-        noCarsText.setFillColor(sf::Color::Yellow);
-        noCarsText.setPosition(50.f, 400.f);
+        noCarsText.setCharacterSize(48);
+        noCarsText.setFillColor(sf::Color::Red);
+        noCarsText.setPosition(300.f, 400.f);
         app.draw(noCarsText);
     }
     

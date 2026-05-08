@@ -7,9 +7,9 @@
 #include "Lists/YandexGo/YandexGo_Minivan.h"
 #include "Lists/YandexGo/YandexGo_Cruise.h"
 
-#include "Lists/Uber/Uber_UberX.h"
-#include "Lists/Uber/Uber_UberXL.h"
-#include "Lists/Uber/Uber_Electric.h"
-#include "Lists/Uber/Uber_VanXL.h"
-#include "Lists/Uber/Uber_Black.h"
+// #include "Lists/Uber/Uber_UberX.h"
+// #include "Lists/Uber/Uber_UberXL.h"
+// #include "Lists/Uber/Uber_Electric.h"
+// #include "Lists/Uber/Uber_VanXL.h"
+// #include "Lists/Uber/Uber_Black.h"
 

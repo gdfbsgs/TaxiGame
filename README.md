@@ -1,6 +1,6 @@
 # TaxiGame
 
-[![C++](https://img.shields.io/badge/C++-17-blue.svg)](https://isocpp.org/)
+[![C++](https://img.shields.io/badge/C++-26-blue.svg)](https://isocpp.org/)
 [![SFML](https://img.shields.io/badge/SFML-2.5.1-green.svg)](https://www.sfml-dev.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

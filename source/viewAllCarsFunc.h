@@ -66,7 +66,7 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
         }
         sf::Sprite carSprite(carTexture);
         carSprite.setScale(1, 1);
-        carSprite.setPosition(180.f, 200.f);
+        carSprite.setPosition(180.f, 160.f);
         app.draw(carSprite);
         
         carModelText.setFont(font);

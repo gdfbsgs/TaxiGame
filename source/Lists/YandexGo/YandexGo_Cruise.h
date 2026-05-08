@@ -1,1 +1,1 @@
-cars.push_back(Car("Mercedes-Benz V-Klasse","Mercedes-Benz", 6, 12.0, "Cruise", 79800, false, 1));
+cars.push_back(Car("Mercedes-Benz V-Klasse","Mercedes-Benz","Black", 6, 12.0, "Cruise", 79800, false, 1));

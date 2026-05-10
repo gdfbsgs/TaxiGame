@@ -23,8 +23,10 @@ string TaxiGame::getCurrentMode() {
 void TaxiGame::setCurrentMode(string m) {
     currentMode = m;
     tierButtons.clear();
+    manufacturerbuttons.clear();
     if (gameFont != nullptr) {
         initializeTierButtons(*gameFont);
+        initializeManufacturerButtons(*gameFont);
     }
     // Validate currentTier against the newly created buttons
     if (currentTier != "MainMenu" && currentTier != "ModeSelect") {
@@ -47,6 +49,18 @@ void TaxiGame::setCurrentTier(string t) {
 string TaxiGame::getCurrentTier() {
     return currentTier;
 }
+void TaxiGame::setCurrentColor(string c) {
+    currentColor = c;
+}
+string TaxiGame::getCurrentColor() {
+    return currentColor;
+}
+void TaxiGame::setCurrentManufacturer(string m) {
+    currentManufacturer = m;
+}
+string TaxiGame::getCurrentManufacturer() {
+    return currentManufacturer;
+}
 vector<Button>& TaxiGame::getButtons() {
     return buttons;
 } 
@@ -62,12 +76,14 @@ void TaxiGame::initializeCars() {
 #include "source/TierButtonsInit.h"
 #include "source/ColorButtonsInit.h"
 #include "source/ModeButtonsInit.h"
+#include "source/ManufacturerButtonsInit.h"
 #include "source/MainMenuButtonsInit.h"
 
 #include "source/functions/MainMenuButtonsView.h"
 #include "source/functions/TierButtonsView.h"
 #include "source/functions/ModeButtonsView.h"
 #include "source/functions/ColorButtonsView.h"
+#include "source/functions/ManufacturerButtonsView.h"
 #include "source/functions/mouseMove.h"
 #include "source/functions/mouseClick.h"
 #include "source/CarSendWindow.h"
@@ -148,12 +164,13 @@ int main() {
         }
         else if(game.getCurrentTier() != "MainMenu" and game.getCurrentTier() != "ModeSelect" and game.getCurrentTier() != "CarSend"){
             app.clear(sf::Color::Black);
-            app.draw(Background);
+            app.draw(Background);/*  */
             sf::Vector2i mousePos = sf::Mouse::getPosition(app);
-            game.viewAllCars(app, font, mousePos, game);
             game.viewMainMenuButtons(app, font);
-            game.viewTierButtons(app, font);
-           
+            game.viewManufacturerButtons(app, font);
+            game.viewAllCars(app, font, mousePos, game);
+            
+            
             app.display();
         } 
         

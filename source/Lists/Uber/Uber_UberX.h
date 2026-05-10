@@ -1,48 +1,48 @@
 
-    cars.push_back(Car("Toyota Camry", 4, 1.0, "UberX", 25000, false, 1));
-    cars.push_back(Car("Toyota Corolla", 4, 1.0, "UberX", 22000, false, 1));
-    cars.push_back(Car("Toyota Corolla Hatchback", 4, 1.0, "UberX", 23000, false, 1));
-    cars.push_back(Car("Toyota Prius", 4, 1.0, "UberX", 28000, false, 1));
-    cars.push_back(Car("Toyota Prius Prime", 4, 1.0, "UberX", 29000, false, 1));
-    cars.push_back(Car("Toyota Yaris", 4, 1.0, "UberX", 17000, false, 1));
-    cars.push_back(Car("Toyota Avalon", 4, 1.1, "UberX", 36000, false, 1));
-    cars.push_back(Car("Toyota Matrix", 4, 1.0, "UberX", 18000, false, 1));
-    cars.push_back(Car("Toyota Venza", 4, 1.1, "UberX", 34000, false, 1));
-    cars.push_back(Car("Toyota RAV4", 4, 1.1, "UberX", 28000, false, 1));
-    cars.push_back(Car("Toyota C-HR", 4, 1.0, "UberX", 23000, false, 1));
-    cars.push_back(Car("Toyota Corolla Cross", 4, 1.0, "UberX", 24000, false, 1));
+    cars.push_back(Car("Toyota Camry", "Toyota", "Black", 4, 1.0, "UberX", 25000, false, 1, "", "Uber"));
+    cars.push_back(Car("Toyota Corolla", "Toyota", "Black", 4, 1.0, "UberX", 22000, false, 1, "", "Uber"));
+    cars.push_back(Car("Toyota Corolla Hatchback", "Toyota", "Black", 4, 1.0, "UberX", 23000, false, 1, "", "Uber"));
+    cars.push_back(Car("Toyota Prius", "Toyota", "Black", 4, 1.0, "UberX", 28000, false, 1, "", "Uber"));
+    cars.push_back(Car("Toyota Prius Prime", "Toyota", "Black", 4, 1.0, "UberX", 29000, false, 1, "", "Uber"));
+    cars.push_back(Car("Toyota Yaris", "Toyota", "Black", 4, 1.0, "UberX", 17000, false, 1, "", "Uber"));
+    cars.push_back(Car("Toyota Avalon", "Toyota", "Black", 4, 1.1, "UberX", 36000, false, 1, "", "Uber"));
+    cars.push_back(Car("Toyota Matrix", "Toyota", "Black", 4, 1.0, "UberX", 18000, false, 1, "", "Uber"));
+    cars.push_back(Car("Toyota Venza", "Toyota", "Black", 4, 1.1, "UberX", 34000, false, 1, "", "Uber"));
+    cars.push_back(Car("Toyota RAV4", "Toyota", "Black", 4, 1.1, "UberX", 28000, false, 1, "", "Uber"));
+    cars.push_back(Car("Toyota C-HR", "Toyota", "Black", 4, 1.0, "UberX", 23000, false, 1, "", "Uber"));
+    cars.push_back(Car("Toyota Corolla Cross", "Toyota", "Black", 4, 1.0, "UberX", 24000, false, 1, "", "Uber"));
 
     // --- Honda ---
-    cars.push_back(Car("Honda Accord", 4, 1.0, "UberX", 27000, false, 1));
-    cars.push_back(Car("Honda Civic", 4, 1.0, "UberX", 24000, false, 1));
-    cars.push_back(Car("Honda Civic Hatchback", 4, 1.0, "UberX", 25000, false, 1));
-    cars.push_back(Car("Honda Insight", 4, 1.0, "UberX", 26000, false, 1));
-    cars.push_back(Car("Honda Fit", 4, 1.0, "UberX", 18000, false, 1));
-    cars.push_back(Car("Honda Clarity", 4, 1.0, "UberX", 34000, false, 1));
-    cars.push_back(Car("Honda CR-V", 4, 1.1, "UberX", 29000, false, 1));
-    cars.push_back(Car("Honda HR-V", 4, 1.0, "UberX", 24000, false, 1));
+    cars.push_back(Car("Honda Accord", "Honda", "Black", 4, 1.0, "UberX", 27000, false, 1, "", "Uber"));
+    cars.push_back(Car("Honda Civic", "Honda", "Black", 4, 1.0, "UberX", 24000, false, 1, "", "Uber"));
+    cars.push_back(Car("Honda Civic Hatchback", "Honda", "Black", 4, 1.0, "UberX", 25000, false, 1, "", "Uber"));
+    cars.push_back(Car("Honda Insight", "Honda", "Black", 4, 1.0, "UberX", 26000, false, 1, "", "Uber"));
+    cars.push_back(Car("Honda Fit", "Honda", "Black", 4, 1.0, "UberX", 18000, false, 1, "", "Uber"));
+    cars.push_back(Car("Honda Clarity", "Honda", "Black", 4, 1.0, "UberX", 34000, false, 1, "", "Uber"));
+    cars.push_back(Car("Honda CR-V", "Honda", "Black", 4, 1.1, "UberX", 29000, false, 1, "", "Uber"));
+    cars.push_back(Car("Honda HR-V", "Honda", "Black", 4, 1.0, "UberX", 24000, false, 1, "", "Uber"));
 
     // --- Hyundai ---
-    cars.push_back(Car("Hyundai Sonata", 4, 1.0, "UberX", 25000, false, 1));
-    cars.push_back(Car("Hyundai Elantra", 4, 1.0, "UberX", 21000, false, 1));
-    cars.push_back(Car("Hyundai Elantra GT", 4, 1.0, "UberX", 22000, false, 1));
-    cars.push_back(Car("Hyundai Accent", 4, 1.0, "UberX", 17000, false, 1));
-    cars.push_back(Car("Hyundai Veloster", 4, 1.0, "UberX", 20000, false, 1));
-    cars.push_back(Car("Hyundai Ioniq Hybrid", 4, 1.0, "UberX", 25000, false, 1));
-    cars.push_back(Car("Hyundai Kona", 4, 1.0, "UberX", 23000, false, 1));
-    cars.push_back(Car("Hyundai Tucson", 4, 1.1, "UberX", 28000, false, 1));
-    cars.push_back(Car("Hyundai Venue", 4, 1.0, "UberX", 20000, false, 1));
+    cars.push_back(Car("Hyundai Sonata", "Hyundai", "Black", 4, 1.0, "UberX", 25000, false, 1, "", "Uber"));
+    cars.push_back(Car("Hyundai Elantra", "Hyundai", "Black", 4, 1.0, "UberX", 21000, false, 1, "", "Uber"));
+    cars.push_back(Car("Hyundai Elantra GT", "Hyundai", "Black", 4, 1.0, "UberX", 22000, false, 1, "", "Uber"));
+    cars.push_back(Car("Hyundai Accent", "Hyundai", "Black", 4, 1.0, "UberX", 17000, false, 1, "", "Uber"));
+    cars.push_back(Car("Hyundai Veloster", "Hyundai", "Black", 4, 1.0, "UberX", 20000, false, 1, "", "Uber"));
+    cars.push_back(Car("Hyundai Ioniq Hybrid", "Hyundai", "Black", 4, 1.0, "UberX", 25000, false, 1, "", "Uber"));
+    cars.push_back(Car("Hyundai Kona", "Hyundai", "Black", 4, 1.0, "UberX", 23000, false, 1, "", "Uber"));
+    cars.push_back(Car("Hyundai Tucson", "Hyundai", "Black", 4, 1.1, "UberX", 28000, false, 1, "", "Uber"));
+    cars.push_back(Car("Hyundai Venue", "Hyundai", "Black", 4, 1.0, "UberX", 20000, false, 1, "", "Uber"));
 
     // --- Kia ---
-    cars.push_back(Car("Kia Optima", 4, 1.0, "UberX", 24000, false, 1));
-    cars.push_back(Car("Kia K5", 4, 1.0, "UberX", 25000, false, 1));
-    cars.push_back(Car("Kia Forte", 4, 1.0, "UberX", 20000, false, 1));
-    cars.push_back(Car("Kia Rio", 4, 1.0, "UberX", 17000, false, 1));
-    cars.push_back(Car("Kia Soul", 4, 1.0, "UberX", 20000, false, 1));
-    cars.push_back(Car("Kia Niro", 4, 1.0, "UberX", 27000, false, 1));
-    cars.push_back(Car("Kia Sportage", 4, 1.1, "UberX", 29000, false, 1));
-    cars.push_back(Car("Kia Seltos", 4, 1.0, "UberX", 24000, false, 1));
-    cars.push_back(Car("Kia Stinger", 4, 1.1, "UberX", 37000, false, 1));
+    cars.push_back(Car("Kia Optima", "Kia", "Black", 4, 1.0, "UberX", 24000, false, 1, "", "Uber"));
+    cars.push_back(Car("Kia K5", "Kia", "Black", 4, 1.0, "UberX", 25000, false, 1, "", "Uber"));
+    cars.push_back(Car("Kia Forte", "Kia", "Black", 4, 1.0, "UberX", 20000, false, 1, "", "Uber"));
+    cars.push_back(Car("Kia Rio", "Kia", "Black", 4, 1.0, "UberX", 17000, false, 1, "", "Uber"));
+    cars.push_back(Car("Kia Soul", "Kia", "Black", 4, 1.0, "UberX", 20000, false, 1, "", "Uber"));
+    cars.push_back(Car("Kia Niro", "Kia", "Black", 4, 1.0, "UberX", 27000, false, 1, "", "Uber"));
+    cars.push_back(Car("Kia Sportage", "Kia", "Black", 4, 1.1, "UberX", 29000, false, 1, "", "Uber"));
+    cars.push_back(Car("Kia Seltos", "Kia", "Black", 4, 1.0, "UberX", 24000, false, 1, "", "Uber"));
+    cars.push_back(Car("Kia Stinger", "Kia", "Black", 4, 1.1, "UberX", 37000, false, 1, "", "Uber"));
 
     // --- Nissan ---
     cars.push_back(Car("Nissan Altima", 4, 1.0, "UberX", 25000, false, 1));

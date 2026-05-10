@@ -1,4 +1,8 @@
 void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i mousePos, TaxiGame& game) {
+    // Initialize manufacturer buttons if not already
+    if (manufacturerbuttons.empty()) {
+        initializeManufacturerButtons(font);
+    }
     // Локальные переменные для текста: уровень, деньги, машины
     sf::Text tierText;
     sf::Text moneyText;
@@ -7,21 +11,25 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
     sf::Text carManufacturerText;
     // Текущий отображаемый автомобиль (статический, чтобы сохранять между кадрами)
     static long long carCurrent = 0;
-    static std::string prevTier = "";
+    static std::string prevColor = "";
+    static std::string prevManufacturer = "";
     static int debounce = 0; // Frame debounce instead of sleep
     static sf::Texture carTexture;
     static std::string lastModel = "";
     
     std::string currentTier = getCurrentTier();
+    std::string currentColor = getCurrentColor();
+    std::string currentManufacturer = getCurrentManufacturer();
     
-    // Detect tier change or invalid, reset to first matching
-    if (currentTier != prevTier || cars.empty() || carCurrent < 0 || carCurrent >= cars.size() || cars[carCurrent].getTier() != currentTier) {
+    // Detect color or manufacturer change or invalid, reset to first matching
+    if (currentColor != prevColor || currentManufacturer != prevManufacturer || cars.empty() || carCurrent < 0 || carCurrent >= cars.size() || (currentColor != "All" && cars[carCurrent].getColor() != currentColor) || (currentManufacturer != "All" && cars[carCurrent].getManufacturer() != currentManufacturer)) {
         carCurrent = 0;
         // Find first matching
-        while (carCurrent < cars.size() && (currentTier != "All" && cars[carCurrent].getTier() != currentTier)) {
+        while (carCurrent < cars.size() && ((currentColor != "All" && cars[carCurrent].getColor() != currentColor) || (currentManufacturer != "All" && cars[carCurrent].getManufacturer() != currentManufacturer))) {
             carCurrent++;
         }
-        prevTier = currentTier;
+        prevColor = currentColor;
+        prevManufacturer = currentManufacturer;
     }
     
     // Keyboard navigation with debounce
@@ -29,7 +37,7 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
             if (carCurrent > 0){
                 carCurrent--;
-                while(carCurrent > 0 && (currentTier != "All" && cars[carCurrent].getTier() != currentTier)){
+                while(carCurrent > 0 && ((currentColor != "All" && cars[carCurrent].getColor() != currentColor) || (currentManufacturer != "All" && cars[carCurrent].getManufacturer() != currentManufacturer))){
                     carCurrent--;
                 }
             }
@@ -37,13 +45,13 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
             carCurrent++;
-            while(carCurrent < cars.size() && (currentTier != "All" && cars[carCurrent].getTier() != currentTier)){
+            while(carCurrent < cars.size() && ((currentColor != "All" && cars[carCurrent].getColor() != currentColor) || (currentManufacturer != "All" && cars[carCurrent].getManufacturer() != currentManufacturer))){
                 carCurrent++;
             }
             if (carCurrent >= cars.size()) {
-                carCurrent = cars.size();
+                carCurrent = 0;
                 // Find first matching on wrap
-                while (carCurrent < cars.size() && (currentTier != "All" && cars[carCurrent].getTier() != currentTier)) {
+                while (carCurrent < cars.size() && ((currentColor != "All" && cars[carCurrent].getColor() != currentColor) || (currentManufacturer != "All" && cars[carCurrent].getManufacturer() != currentManufacturer))) {
                     carCurrent++;
                 }
             }
@@ -54,7 +62,7 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
     }
     
     // Draw car if valid
-    if (carCurrent >= 0 && carCurrent < cars.size() && (currentTier == "All" or currentTier == "UberX" || cars[carCurrent].getTier() == currentTier)) {
+    if (carCurrent >= 0 && carCurrent < cars.size() && (currentColor == "All" || cars[carCurrent].getColor() == currentColor) && (currentManufacturer == "All" || cars[carCurrent].getManufacturer() == currentManufacturer)) {
         // Cache texture
         std::string model = cars[carCurrent].getModel();
         std::string manufacturer = cars[carCurrent].getManufacturer();
@@ -70,7 +78,7 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
         app.draw(carSprite);
         
         carModelText.setFont(font);
-        carModelText.setString(model);
+        carModelText.setString(model + (cars[carCurrent].getVariant().empty() ? "" : " " + cars[carCurrent].getVariant()));
         carModelText.setCharacterSize(28);
         carModelText.setFillColor(sf::Color::Blue);
         carModelText.setPosition(50.f, 580.f);
@@ -102,7 +110,7 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
             ownedStr ="[$" + std::to_string(price) + "]";
         }
         
-        carInfoText.setString("Tier: " + tierCar + "   " + ownedStr);
+        carInfoText.setString("Supported: " + cars[carCurrent].getMode() + " - " + tierCar + "   " + ownedStr);
         carInfoText.setCharacterSize(20);
         if(cars[carCurrent].isOwned()){
             carInfoText.setFillColor(sf::Color::Green);
@@ -153,12 +161,13 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
     }
     
     
-    tierText.setFont(font);
-    tierText.setString("Tier: " + getCurrentTier());
-    tierText.setCharacterSize(25);
-    tierText.setFillColor(sf::Color::Blue);
-    tierText.setPosition(640.f, 3.f);
-    app.draw(tierText);
+    sf::Text manufacturerText;
+    manufacturerText.setFont(font);
+    manufacturerText.setString("Manufacturer: " + getCurrentManufacturer());
+    manufacturerText.setCharacterSize(25);
+    manufacturerText.setFillColor(sf::Color::Blue);
+    manufacturerText.setPosition(640.f, 3.f);
+    app.draw(manufacturerText);
     
     moneyText.setFont(font);
     moneyText.setString("Money: " + std::to_string(money));
@@ -173,10 +182,20 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
     Modetext.setFillColor(sf::Color::Blue);
     Modetext.setPosition(640.f, 70.f);
     app.draw(Modetext);
+
+    sf::Text colorText;
+    colorText.setFont(font);
+    colorText.setString("Color: " + getCurrentColor());
+    colorText.setCharacterSize(20);
+    colorText.setFillColor(sf::Color::Blue);
+    colorText.setPosition(640.f, 105.f);
+    app.draw(colorText);
     
     for (auto& button : colorbuttons) {
         button.draw(app);
     }
-              
+    for (auto& button : manufacturerbuttons) {
+        button.draw(app);
+    }
 }
 

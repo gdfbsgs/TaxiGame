@@ -1,0 +1,10 @@
+manufacturerbuttons.emplace_back(850, 50, 120, 30, "All", font);
+manufacturerbuttons.emplace_back(850, 90, 120, 30, "Mercedes-Benz", font);
+manufacturerbuttons.emplace_back(850, 130, 120, 30, "BMW", font);
+manufacturerbuttons.emplace_back(850, 170, 120, 30, "Audi", font);
+manufacturerbuttons.emplace_back(850, 210, 120, 30, "Lexus", font);
+manufacturerbuttons.emplace_back(850, 250, 120, 30, "Toyota", font);
+manufacturerbuttons.emplace_back(850, 290, 120, 30, "Volkswagen", font);
+manufacturerbuttons.emplace_back(850, 330, 120, 30, "Hyundai", font);
+manufacturerbuttons.emplace_back(850, 370, 120, 30, "Kia", font);
+manufacturerbuttons.emplace_back(850, 410, 120, 30, "Changan", font);

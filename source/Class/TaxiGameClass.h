@@ -10,6 +10,8 @@ class TaxiGame {
         long long scrollY;
         // Текущий фильтр уровня (Economy, Comfort и т.д.)
         string currentTier;
+        string currentColor;
+        string currentManufacturer;
         string currentMode = "YandexGo";
         int selectedCarIndex = 0;
         string distanceInput = "";
@@ -23,6 +25,7 @@ class TaxiGame {
         vector<Button> mainButtons;
         vector<Button> modeButtons;
         vector<Button> colorbuttons;
+        vector<Button> manufacturerbuttons;
         // Приватный метод загрузки списка машин
         void initializeCars();
 
@@ -36,7 +39,7 @@ class TaxiGame {
         sf::Font* gameFont = nullptr;
     
         // Конструктор: стартовые ~USD под реалистичные цены авто; прокрутка 0, уровень "All"
-        TaxiGame() : money(65000), currentTier("All") {
+        TaxiGame() : money(65000), currentTier("All"), currentColor("All"), currentManufacturer("All") {
             initializeCars();
         }
 
@@ -55,14 +58,20 @@ class TaxiGame {
         void initializeTierButtons(sf::Font& font);
         void initializeModeButtons(sf::Font& font);
         void initializeColorButtons(sf::Font& font);
+        void initializeManufacturerButtons(sf::Font& font);
         void viewMainMenuButtons(sf::RenderWindow& app, sf::Font& font);
         void viewTierButtons(sf::RenderWindow& app, sf::Font& font);
         void viewModeButtons(sf::RenderWindow& app, sf::Font& font);
         void viewColorButtons(sf::RenderWindow& app, sf::Font& font);
+        void viewManufacturerButtons(sf::RenderWindow& app, sf::Font& font);
         int getCarsCount();
         
         void setCurrentTier(string t);
         string getCurrentTier();
+        void setCurrentColor(string c);
+        string getCurrentColor();
+        void setCurrentManufacturer(string m);
+        string getCurrentManufacturer();
         vector<Button>& getButtons();
         void addButton(float x, float y, float width, float height, const string& label, sf::Font& font);
        
@@ -75,8 +84,11 @@ class TaxiGame {
         vector<Button>& getMainButtons() { 
             return mainButtons;
         }
-        vector<Button>& getModeButtons() { 
+        vector<Button>& getModeButtons() {
             return modeButtons;
+        }
+        vector<Button>& getManufacturerButtons() {
+            return manufacturerbuttons;
         }
         // Обработка движения мыши (hover кнопок)
         void handleMouseMoved(sf::Vector2i mousePos);

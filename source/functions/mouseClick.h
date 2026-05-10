@@ -36,5 +36,17 @@ void TaxiGame::handleMouseClicked(sf::Vector2i mousePos, sf::RenderWindow& app) 
             setCurrentMode(button.getLabel());
         }
     }
+    // Handle color buttons
+    for (auto& button : colorbuttons) {
+        if (button.isClicked(mousePos.x, mousePos.y)) {
+            setCurrentColor(button.getLabel());
+        }
+    }
+    // Handle manufacturer buttons
+    for (auto& button : manufacturerbuttons) {
+        if (button.isClicked(mousePos.x, mousePos.y)) {
+            setCurrentManufacturer(button.getLabel());
+        }
+    }
 }
 

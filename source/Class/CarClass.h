@@ -23,8 +23,8 @@ private:
 
 
 public:
-    // Конструктор: модель, вместимость, тариф, класс, цена, владение, количество, вариант, режим (по умолчанию "YandexGo")
-    Car(std::string m,std::string manu, std::string col, long long c, double bf, std::string t, double bp = 0.0, bool o = false, long long qty = 1, std::string v = "", std::string mde = "YandexGo")
+    // Конструктор: модель, производитель, цвет, вместимость, тариф, уровень, цена, владение, количество, вариант, режим
+    Car(std::string m, std::string manu, std::string col, long long c, double bf, std::string t, long long bp, bool o, long long qty, std::string v = "", std::string mde = "YandexGo")
         : model(m), manufacturer(manu), color(col), capacity(c), baseFare(bf), tier(t), buyPrice(bp), owned(o), quantity(qty), variant(v), mode(mde) {}
 
 

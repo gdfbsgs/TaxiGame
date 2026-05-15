@@ -111,12 +111,12 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
         }
         
         carInfoText.setString("Supported: " + cars[carCurrent].getMode() + " - " + tierCar + "   " + ownedStr);
-        carInfoText.setCharacterSize(20);
+        carInfoText.setCharacterSize(22);
         if(cars[carCurrent].isOwned()){
-            carInfoText.setFillColor(sf::Color::Green);
+            carInfoText.setFillColor(sf::Color::Blue);
         }
         else{
-            carInfoText.setFillColor(sf::Color::Red);
+            carInfoText.setFillColor(sf::Color::Blue);
         }
         
         carInfoText.setPosition(50.f, 620.f);
@@ -135,7 +135,7 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
             }
             
             sf::RectangleShape buyBox(sf::Vector2f(120.f, 50.f));
-            buyBox.setPosition(650.f, 650.f);
+            buyBox.setPosition(750.f, 750.f);
             buyBox.setFillColor(canBuy ? sf::Color::Green : sf::Color::Red);
             buyBox.setOutlineThickness(2);
             buyBox.setOutlineColor(sf::Color::White);
@@ -146,7 +146,7 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
             buyText.setString("BUY");
             buyText.setCharacterSize(24);
             buyText.setFillColor(sf::Color::White);
-            buyText.setPosition(680.f, 660.f); // центрируем примерно
+            buyText.setPosition(780.f, 760.f); // центрируем примерно
             app.draw(buyText);
         }
     } else {

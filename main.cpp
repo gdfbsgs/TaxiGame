@@ -11,9 +11,11 @@ using namespace std;
 #include "source/Class/CarClass.h"     // Класс машины (такси)
 #include "source/Class/ButtonClass.h"   // Класс кнопки UI
 #include "source/Class/TaxiGameClass.h" // Главный класс игры
-
-// Метод регулировки вертикальной прокрутки списка машин (на стрелки вверх/вниз)
-// Возвращает количество доступных машин
+#include "source/Class/RideClass.h"     // Класс ride (заказ)
+#include "source/Class/RideSystemClass.h" // Система управления заказами
+#include "source/functions/RidesView.h" // UI для отображения заказов
+// Set to false to completely disable the ride system
+const bool RIDES_ENABLED = true;
 int TaxiGame::getCarsCount() {
     return cars.size();
 }
@@ -91,6 +93,12 @@ void TaxiGame::initializeCars() {
 int main() {
     #include "source/GameStart.h"
     
+    // Initialize Ride System (can be disabled by setting RIDES_ENABLED to false)
+    RideSystem rideSystem;
+    if (RIDES_ENABLED) {
+        rideSystem.setRideGenerationChance(0.15f); // 15% chance to generate ride each frame
+    }
+    
     while (app.isOpen()){ // кнопка закрыть приложение
         sf::Event event;
         while (app.pollEvent(event))
@@ -108,9 +116,22 @@ int main() {
             if (event.type == sf::Event::MouseButtonPressed) {
                 if (event.mouseButton.button == sf::Mouse::Left) {
                     sf::Vector2i mousePos = sf::Mouse::getPosition(app);
-                    if (game.getCurrentTier() == "CarSend") {
+                    // Always check main menu buttons first (Exit, CarsList, MainMenu, ModeSelect, CarSend)
+                    bool mainButtonClicked = false;
+                    for (auto& button : game.getMainButtons()) {
+                        if (button.isClicked(mousePos.x, mousePos.y)) {
+                            mainButtonClicked = true;
+                            break;
+                        }
+                    }
+                    
+                    if (mainButtonClicked) {
+                        game.handleMouseClicked(mousePos, app);
+                    } else if (game.getCurrentTier() == "CarSend") {
+                        // Only handle CarSend-specific clicks if not a main button
                         handleCarSendClick(mousePos, game);
                     } else {
+                        // Handle other clicks normally
                         game.handleMouseClicked(mousePos, app);
                     }
                     sound.play();
@@ -131,7 +152,26 @@ int main() {
                 } 
                 if (event.key.code == sf::Keyboard::Num1) {
                     game.money -= 100000;
-                } 
+                }
+                // ===== RIDE SYSTEM KEYBOARD HANDLERS =====
+                if (RIDES_ENABLED) {
+                    // Accept ride with SPACE + 0-4 (for rides 0-4)
+                    if (event.key.code == sf::Keyboard::Space) {
+                        // This will be handled with number keys below
+                    }
+                    // Number keys 0-4 to accept rides
+                    if (event.key.code >= sf::Keyboard::Num0 && event.key.code <= sf::Keyboard::Num4) {
+                        int rideIndex = event.key.code - sf::Keyboard::Num0;
+                        if (rideSystem.acceptRide(rideIndex)) {
+                            game.money += rideSystem.completeRide(rideIndex) / 2; // Partial payment on acceptance
+                        }
+                    }
+                    // R key to toggle/reset ride system
+                    if (event.key.code == sf::Keyboard::R) {
+                        rideSystem.clearRides();
+                    }
+                }
+                // =========================================
                 if (event.key.code == sf::Keyboard::Escape) {
                     sound3.play();
                     app.close();
@@ -140,12 +180,21 @@ int main() {
         if(game.getCurrentTier() == "CarSend"){
             app.clear(sf::Color::Black);
             app.draw(Background);
-            carSendDistance = (rand() % 50) + 5;
-            if (carSendSelectedTier.empty()) {
-                openCarSendUI(game.getCurrentMode(), font);
-            }
-            viewCarSendUI(app, game);
+            // carSendDistance = (rand() % 50) + 5;
+            // if (carSendSelectedTier.empty()) {
+            //     openCarSendUI(game.getCurrentMode(), font);
+            // }
+            // viewCarSendUI(app, game);
             game.viewMainMenuButtons(app, font);
+            sf::Text Not_available;
+            Not_available.setFont(font);
+            Not_available.setString("In Progress...");
+            Not_available.setCharacterSize(50);
+            Not_available.setFillColor(sf::Color::Red);
+            Not_available.setPosition(400.f, 500.f);
+            app.draw(Not_available);
+            // ====================================================
+            
             app.display();
         }
         else if (game.getCurrentTier() == "MainMenu") {
@@ -164,13 +213,11 @@ int main() {
         }
         else if(game.getCurrentTier() != "MainMenu" and game.getCurrentTier() != "ModeSelect" and game.getCurrentTier() != "CarSend"){
             app.clear(sf::Color::Black);
-            app.draw(Background);/*  */
+            app.draw(Background);
             sf::Vector2i mousePos = sf::Mouse::getPosition(app);
             game.viewMainMenuButtons(app, font);
             game.viewManufacturerButtons(app, font);
             game.viewAllCars(app, font, mousePos, game);
-            
-            
             app.display();
         } 
         

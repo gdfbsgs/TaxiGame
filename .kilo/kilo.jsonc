@@ -1,0 +1,17 @@
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "provider": {
+    "lmstudio": {
+      "options": {
+        "baseURL": "http://localhost:1234/v1"
+      },
+      "whitelist": [
+        "qwen3.5-9b-glm5.1-distill-v1",
+        "mistral-7b-instruct",
+        "neural-chat-7b-v3",
+        "orca-2-13b"
+      ]
+    }
+  },
+  "enabled_providers": ["lmstudio"]
+}

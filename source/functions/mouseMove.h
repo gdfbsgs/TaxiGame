@@ -8,4 +8,10 @@ void TaxiGame::handleMouseMoved(sf::Vector2i mousePos) {
     for (auto& button : modeButtons) {
         button.setHovered(button.isClicked(mousePos.x, mousePos.y));
     }
+    for (auto& button : manufacturerbuttons) {
+        button.setHovered(button.isClicked(mousePos.x, mousePos.y));
+    }
+    for (auto& button : colorbuttons) {
+        button.setHovered(button.isClicked(mousePos.x, mousePos.y));
+    }
 }

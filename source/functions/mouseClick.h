@@ -33,7 +33,7 @@ void TaxiGame::handleMouseClicked(sf::Vector2i mousePos, sf::RenderWindow& app) 
     }
     for (auto& button : modeButtons) {
         if (button.isClicked(mousePos.x, mousePos.y)) {
-            if(button.getLabel() == "Bolt") {
+            if(button.getLabel() == "Bolt" or button.getLabel() == "Uber") {
                 setCurrentTier("CarSend");
             } 
             else {

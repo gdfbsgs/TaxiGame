@@ -174,7 +174,7 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
     moneyText.setCharacterSize(20);
     moneyText.setFillColor(sf::Color::Blue);
     moneyText.setPosition(620.f, 35.f);
-    app.draw(moneyText);`
+    app.draw(moneyText);
     sf::Text Modetext;
     Modetext.setFont(font);
     Modetext.setString("Mode: " + getCurrentMode());

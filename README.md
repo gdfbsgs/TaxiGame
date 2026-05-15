@@ -41,7 +41,7 @@ IOS(with UTM):
 - ![IOS](https://img.shields.io/badge/IOS-18-black.svg)
 - ![IOS](https://img.shields.io/badge/IOS-26-black.svg)
 
-IPadOS(with UTM):
+IPadOS(with UTM, recommended IpadPro):
 - ![IPadOS](https://img.shields.io/badge/IPadOS-16-black.svg)
 - ![IPadOS](https://img.shields.io/badge/IPadOS-17-black.svg)
 - ![IPadOS](https://img.shields.io/badge/IPadOS-18-black.svg)

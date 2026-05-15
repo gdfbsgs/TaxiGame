@@ -21,9 +21,17 @@ A taxi management simulation game built with C++ and SFML. Manage your taxi flee
 - SFML 2.5.1 (static linking)
 - Windows (PowerShell for build scripts)
 ## Supported OS
-- [![Windows](https://img.shields.io/badge/Windows-7-blue.svg)](https://opensource.org/licenses/MIT)
-- [![Windows](https://img.shields.io/badge/Windows-10-blue.svg)](https://opensource.org/licenses/MIT)
-- [![Windows](https://img.shields.io/badge/Windows-11-blue.svg)](https://opensource.org/licenses/MIT)
+Windows:
+- [![Windows](https://img.shields.io/badge/Windows-XP-blue.svg)]
+- [![Windows](https://img.shields.io/badge/Windows-Vista-blue.svg)]
+- [![Windows](https://img.shields.io/badge/Windows-7-blue.svg)]
+- [![Windows](https://img.shields.io/badge/Windows-8-blue.svg)]
+- [![Windows](https://img.shields.io/badge/Windows-10-blue.svg)]
+- [![Windows](https://img.shields.io/badge/Windows-11-blue.svg)]
+Android(with Windows Emulation(Vectras VM)):
+- [![Android](https://img.shields.io/badge/Android-14-blue.svg)]
+- [![Android](https://img.shields.io/badge/Android-15-blue.svg)]
+- [![Android](https://img.shields.io/badge/Android-16-blue.svg)]
 ## Building
 
 1. Ensure SFML is installed in `./required/SFML-2.5.1/`

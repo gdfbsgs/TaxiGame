@@ -50,7 +50,10 @@ void TaxiGame::handleMouseClicked(sf::Vector2i mousePos, sf::RenderWindow& app) 
     // Handle manufacturer buttons
     for (auto& button : manufacturerbuttons) {
         if (button.isClicked(mousePos.x, mousePos.y)) {
-            
+            if(button.getLabel() == "Other") {
+                setCurrentManufacturer("All");
+            } 
+            else {
             setCurrentManufacturer(button.getLabel());
             
         }

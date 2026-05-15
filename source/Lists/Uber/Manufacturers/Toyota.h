@@ -1,0 +1,23 @@
+// Toyota cars for Uber
+cars.push_back(Car("Toyota Camry", "Toyota", "Black", 4, 1.0, "UberX", 25000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Corolla", "Toyota", "Black", 4, 1.0, "UberX", 22000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Corolla Hatchback", "Toyota", "Black", 4, 1.0, "UberX", 23000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Prius", "Toyota", "Black", 4, 1.0, "UberX", 28000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Prius Prime", "Toyota", "Black", 4, 1.0, "UberX", 29000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Yaris", "Toyota", "Black", 4, 1.0, "UberX", 17000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Avalon", "Toyota", "Black", 4, 1.1, "UberX", 36000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Matrix", "Toyota", "Black", 4, 1.0, "UberX", 18000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Venza", "Toyota", "Black", 4, 1.1, "UberX", 34000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota RAV4", "Toyota", "Black", 4, 1.1, "UberX", 28000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota C-HR", "Toyota", "Black", 4, 1.0, "UberX", 23000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Corolla Cross", "Toyota", "Black", 4, 1.0, "UberX", 24000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota bZ4X", "Toyota", "Black", 4, 1.2, "Electric", 43000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota bZ4X XLE", "Toyota", "Black", 4, 1.3, "Electric", 48000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Highlander", "Toyota", "Black", 6, 1.3, "UberXL", 38000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Highlander Hybrid", "Toyota", "Black", 6, 1.3, "UberXL", 42000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota 4Runner", "Toyota", "Black", 6, 1.3, "UberXL", 40000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Sequoia", "Toyota", "Black", 6, 1.4, "UberXL", 58000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Land Cruiser", "Toyota", "Black", 6, 1.5, "UberXL", 88000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Grand Highlander", "Toyota", "Black", 6, 1.3, "UberXL", 45000, false, 1, "", "Uber"));
+cars.push_back(Car("Toyota Avalon","Toyota", "Black", 4, 3.5, "Comfort+", 39800, false, 1, "", "YandexGo"));
+cars.push_back(Car("Toyota Camry","Toyota", "Black", 4, 3.5, "Comfort+", 28800, false, 1, "", "YandexGo"));

@@ -1,4 +1,4 @@
-manufacturerbuttons.emplace_back(877,50, 120, 30, "All", font);
+manufacturerbuttons.emplace_back(877,50, 120, 30, "Other", font);
 manufacturerbuttons.emplace_back(877, 90, 120, 30, "Mercedes-Benz", font);
 manufacturerbuttons.emplace_back(877, 130, 120, 30, "BMW", font);
 manufacturerbuttons.emplace_back(877, 170, 120, 30, "Audi", font);

@@ -1,0 +1,22 @@
+// Hyundai cars for Uber
+cars.push_back(Car("Hyundai Sonata", "Hyundai", "Black", 4, 1.0, "UberX", 25000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Elantra", "Hyundai", "Black", 4, 1.0, "UberX", 21000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Elantra GT", "Hyundai", "Black", 4, 1.0, "UberX", 22000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Accent", "Hyundai", "Black", 4, 1.0, "UberX", 17000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Veloster", "Hyundai", "Black", 4, 1.0, "UberX", 20000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Ioniq Hybrid", "Hyundai", "Black", 4, 1.0, "UberX", 25000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Kona", "Hyundai", "Black", 4, 1.0, "UberX", 23000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Tucson", "Hyundai", "Black", 4, 1.1, "UberX", 28000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Venue", "Hyundai", "Black", 4, 1.0, "UberX", 20000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Ioniq 5", "Hyundai", "Black", 4, 1.3, "Electric", 45000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Ioniq 5 Long Range", "Hyundai", "Black", 4, 1.4, "Electric", 52000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Ioniq 5 N", "Hyundai", "Black", 4, 1.5, "Electric", 68000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Ioniq 6", "Hyundai", "Black", 4, 1.3, "Electric", 46000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Ioniq 6 Long Range", "Hyundai", "Black", 4, 1.4, "Electric", 52000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Kona Electric", "Hyundai", "Black", 4, 1.2, "Electric", 35000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Palisade", "Hyundai", "Black", 6, 1.3, "UberXL", 37000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Santa Fe", "Hyundai", "Black", 6, 1.3, "UberXL", 32000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Santa Fe XL", "Hyundai", "Black", 6, 1.3, "UberXL", 34000, false, 1, "", "Uber"));
+cars.push_back(Car("Hyundai Sonata","Hyundai", "Black", 4, 3.5, "Comfort+", 28800, false, 1, "", "YandexGo"));
+cars.push_back(Car("Hyundai Grandeur","Hyundai", "Black", 4, 3.5, "Comfort+", 42800, false, 1, "", "YandexGo"));
+cars.push_back(Car("Hyundai Staria","Hyundai","Black", 6, 7.0, "Minivan", 39200, false, 1, "", "YandexGo"));

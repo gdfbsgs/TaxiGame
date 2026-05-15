@@ -3,7 +3,7 @@
 [![C++](https://img.shields.io/badge/C++-26-blue.svg)](https://isocpp.org/)
 [![SFML](https://img.shields.io/badge/SFML-2.5.1-green.svg)](https://www.sfml-dev.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Windows](https://img.shields.io/badge/Windows-10-black.svg)](https://opensource.org/licenses/MIT)
+
 A taxi management simulation game built with C++ and SFML. Manage your taxi fleet by buying cars, selecting colors, and operating in different modes like YandexGo and Uber.
 
 ## Features
@@ -20,7 +20,10 @@ A taxi management simulation game built with C++ and SFML. Manage your taxi flee
 - C++ compiler (g++ recommended)
 - SFML 2.5.1 (static linking)
 - Windows (PowerShell for build scripts)
-
+## Supported OS
+- [![Windows](https://img.shields.io/badge/Windows-7-blue.svg)](https://opensource.org/licenses/MIT)
+- [![Windows](https://img.shields.io/badge/Windows-10-blue.svg)](https://opensource.org/licenses/MIT)
+- [![Windows](https://img.shields.io/badge/Windows-11-blue.svg)](https://opensource.org/licenses/MIT)
 ## Building
 
 1. Ensure SFML is installed in `./required/SFML-2.5.1/`

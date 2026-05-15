@@ -22,7 +22,7 @@ A taxi management simulation game built with C++ and SFML. Manage your taxi flee
 - Windows (PowerShell for build scripts)
 ## Supported OS
 Windows:
-- [![Windows](https://img.shields.io/badge/Windows-XP-blue.svg)]
+- ![Windows](https://img.shields.io/badge/Windows-XP-blue.svg)
 - [![Windows](https://img.shields.io/badge/Windows-Vista-blue.svg)]
 - [![Windows](https://img.shields.io/badge/Windows-7-blue.svg)]
 - [![Windows](https://img.shields.io/badge/Windows-8-blue.svg)]

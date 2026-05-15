@@ -28,6 +28,8 @@ Windows:
 - [![Windows](https://img.shields.io/badge/Windows-8-blue.svg)]
 - [![Windows](https://img.shields.io/badge/Windows-10-blue.svg)]
 - [![Windows](https://img.shields.io/badge/Windows-11-blue.svg)]
+
+
 Android(with Windows Emulation(Vectras VM)):
 - [![Android](https://img.shields.io/badge/Android-14-blue.svg)]
 - [![Android](https://img.shields.io/badge/Android-15-blue.svg)]

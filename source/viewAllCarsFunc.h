@@ -166,21 +166,21 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
     manufacturerText.setString("Manufacturer: " + getCurrentManufacturer());
     manufacturerText.setCharacterSize(25);
     manufacturerText.setFillColor(sf::Color::Blue);
-    manufacturerText.setPosition(640.f, 3.f);
+    manufacturerText.setPosition(620.f, 3.f);
     app.draw(manufacturerText);
     
     moneyText.setFont(font);
     moneyText.setString("Money: " + std::to_string(money));
     moneyText.setCharacterSize(20);
     moneyText.setFillColor(sf::Color::Blue);
-    moneyText.setPosition(640.f, 35.f);
-    app.draw(moneyText);
+    moneyText.setPosition(620.f, 35.f);
+    app.draw(moneyText);`
     sf::Text Modetext;
     Modetext.setFont(font);
     Modetext.setString("Mode: " + getCurrentMode());
     Modetext.setCharacterSize(20);
     Modetext.setFillColor(sf::Color::Blue);
-    Modetext.setPosition(640.f, 70.f);
+    Modetext.setPosition(620.f, 70.f);
     app.draw(Modetext);
 
     sf::Text colorText;
@@ -188,7 +188,7 @@ void TaxiGame::viewAllCars(sf::RenderWindow& app, sf::Font& font, sf::Vector2i m
     colorText.setString("Color: " + getCurrentColor());
     colorText.setCharacterSize(20);
     colorText.setFillColor(sf::Color::Blue);
-    colorText.setPosition(640.f, 105.f);
+    colorText.setPosition(620.f, 105.f);
     app.draw(colorText);
     
     for (auto& button : colorbuttons) {

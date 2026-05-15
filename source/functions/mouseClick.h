@@ -55,6 +55,8 @@ void TaxiGame::handleMouseClicked(sf::Vector2i mousePos, sf::RenderWindow& app) 
             } 
             else {
             setCurrentManufacturer(button.getLabel());
+
+            }
             
         }
     }

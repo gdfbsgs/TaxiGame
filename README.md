@@ -34,6 +34,18 @@ Android(with Windows Emulation(Vectras VM)):
 - ![Android](https://img.shields.io/badge/Android-14-green.svg)
 - ![Android](https://img.shields.io/badge/Android-15-green.svg)
 - ![Android](https://img.shields.io/badge/Android-16-green.svg)
+
+IOS(with UTM):
+- ![IOS](https://img.shields.io/badge/IOS-16-black.svg)
+- ![IOS](https://img.shields.io/badge/IOS-17-black.svg)
+- ![IOS](https://img.shields.io/badge/IOS-18-black.svg)
+- ![IOS](https://img.shields.io/badge/IOS-26-black.svg)
+
+IPadOS(with UTM):
+- ![IPadOS](https://img.shields.io/badge/IPadOS-16-black.svg)
+- ![IPadOS](https://img.shields.io/badge/IPadOS-17-black.svg)
+- ![IPadOS](https://img.shields.io/badge/IPadOS-18-black.svg)
+- ![IPadOS](https://img.shields.io/badge/IPadOS-26-black.svg)
 ## Building
 
 1. Ensure SFML is installed in `./required/SFML-2.5.1/`
